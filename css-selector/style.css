@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+/* Step 1: Select body element and give it:
+  - Background color of #efefef
+  - Text color of #393939
+*/
+
+body{
+  background-color: #efefef;
+  color: #393939;
+}
+
+/* Step 2: Select every elements and:
+  - Remove all default margin
+  - Give them font family of Raleway
+*/
+*{
+  margin: 0;
+  font-family: "raleway", sans-serif;
+}
+
+/* Step 3: Select h3 elements and:
+  - Give it top and bottom margin of 24px
+*/
+
+h3{
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+/* Step 4: Select button element and:
+  - Remove default border, background color and padding.
+  - Give it bold font weight
+  - Give it pointer cursor
+*/
+button{
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+/* Step 5: Select the element with container id and:
+  - Give it max width of 400px
+  - Center the container on horizontal axis
+*/
+
+#container{
+  max-width: 400px;
+  margin: 0 auto;
+
+}
+
+/* Step 6: Select div elements with class of alert and give it:
+  - Padding of 8px
+  - White background color
+  - Border radius of 8px
+  - Box shadow: 0px 10px 10px -4px rgba(0, 0, 0, 0.1)
+  - Margin bottom of 12px
+*/
+
+div.alert{
+  padding: 8px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 10px 10px -4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 12px;
+}
+
+/* Step 7: Select elements with class of icon and give it: 
+  - Top and bottom margin of 8px
+  - Left and right margin of 20px 
+*/
+
+.icon{
+  margin: 8px 20px;
+}
+
+/* Step 8: Select elements with class of alert__container and give it: 
+  - Flex display
+*/
+
+.alert__container{
+  display: flex;
+}
+
+
+/* Step 9: Use ::before pseudo-element to add an element inside alert container and give it: 
+  - Content of an empty string
+  - Min width of 6px
+  - Background color of #0090d7
+  - Border radius of 50px
+*/
+
+.alert__container::before{
+  content: "";
+  min-width: 6px;
+  background-color: #0090d7;
+  border-radius: 50px;
+}
+
+/* Step 10: Change the alert container pseudo-element to have: 
+  - Background color of #d20d38 if inside div element with danger class
+  - Background color of #e8ac00 if inside div element with warning class
+*/
+
+div.danger .alert__container::before{
+background-color: #d20d38;
+}
+
+div.warning .alert__container::before{
+background-color: #e8ac00;
+}
+
+/* Step 11: Select elements with class of alert__details: 
+  - Give it top and bottom padding of 12px
+  - Give every p elements inside it font size of 14px and margin bottom of 12px
+  - Give the first p element font size of 16px and font weight of bold
+*/
+
+.alert__details{
+  padding: 12px;
+}
+
+.alert__details p{
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.alert__details p:first-child{
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+/* Step 12: Select all disabled button and give it:
+  - Color of grey
+  - Not-allowed cursor
+*/
+
+
+
+
+/* Step 13: Select all buttons and give it:
+  - Color of #0090d7 if its class contains 'info'
+  - Color of #d20d38 if its class contains 'danger'
+  - Color of #e8ac00 if its class contains 'warning'
+*/
+
+button[class*="info"] {
+  color: #0090d7;
+}
+
+button[class*="danger"]{
+  color: #d20d38;
+}
+
+button[class*="warning"]{
+  color: #e8ac00;
+}
+button[disabled]{
+  color: gray;
+  cursor: not-allowed;
+}
+/* Step 14: Select all p element that is direct children of the container and give it:
+  - Margin top of 40px
+  - Font style of italic
+*/
+
+#container > p{
+  margin: 40px;
+  font-style: italic;
+}
+
+/* Step 15: Select all sibling alert elements of h3 elements that have class of dark-mode and give it:
+ - Text color: white
+ - Background color of #393939
+*/
+
+h3.dark-mode ~ .alert{
+  color: white;
+  background-color: #393939;
+}
